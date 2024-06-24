@@ -29,14 +29,24 @@ const findUsuarioById = async (req, res) => {
 const createUsuario = async (req, res) => {
     try {
         const { nombre, apellidos, correo, contrasena, rol, telefono, pais, estado, municipio, colonia, calle, numeroExterior, numeroInterior, cp, infoDomicilio } = req.body;
+        
+        // Verificar si ya existe un usuario con el mismo correo
+        const existingUser = await User.findOne({ correo });
+        if (existingUser) {
+            return res.status(400).json({ message: 'Ya existe un usuario registrado con este correo' });
+        }
+
+        // Si no existe, proceder a crear el nuevo usuario
         const hashedPassword = await bcrypt.hash(contrasena, 10);
         const newUser = new User({ nombre, apellidos, correo, contrasena: hashedPassword, rol, telefono, pais, estado, municipio, colonia, calle, numeroExterior, numeroInterior, cp, infoDomicilio });
         await newUser.save();
+
         res.status(201).json(newUser);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
 };
+
 
 // Actualizar un usuario
 const updateUsuario = async (req, res) => {
