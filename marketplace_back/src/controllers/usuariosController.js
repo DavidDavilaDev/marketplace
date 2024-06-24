@@ -70,10 +70,30 @@ const loginUsuario = async (req, res) => {
         const { correo, contrasena } = req.body;
         const user = await User.findOne({ correo });
         if (!user) throw new Error('Usuario no encontrado');
+
         const isPasswordValid = await bcrypt.compare(contrasena, user.contrasena);
         if (!isPasswordValid) throw new Error('Contraseña incorrecta');
-        const token = jwt.sign({ id: user._id }, JWT_SECRET, { expiresIn: '1h' });
-        res.status(200).json({ token });
+
+        // Crear token JWT con datos del usuario
+        const token = jwt.sign({
+            id: user._id,
+            correo: user.correo,
+            rol: user.rol
+            // Puedes incluir más datos aquí según sea necesario
+        }, JWT_SECRET, { expiresIn: '1h' });
+
+        // Enviar respuesta con token y datos del usuario
+        res.status(200).json({
+            token,
+            usuario: {
+                _id: user._id,
+                nombre: user.nombre,
+                apellidos: user.apellidos,
+                correo: user.correo,
+                rol: user.rol
+                // Incluye otros campos del usuario según necesites
+            }
+        });
     } catch (err) {
         res.status(401).json({ message: err.message });
     }
