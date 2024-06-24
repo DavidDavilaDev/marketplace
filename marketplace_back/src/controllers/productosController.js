@@ -13,7 +13,7 @@ const storage = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage }).single('foto_producto'); // 'foto_producto' debe coincidir con el nombre del campo en el formulario
+const upload = multer({ storage }).single('foto_producto'); 
 
 const agregarProducto = async (req, res) => {
     try {
@@ -31,7 +31,7 @@ const agregarProducto = async (req, res) => {
                 resena_producto: req.body.resena_producto,
                 tiempo_espera: req.body.tiempo_espera,
                 tipo_producto: req.body.tipo_producto,
-                ruta_foto: req.file.path // Obtiene la ruta del archivo subido
+                ruta_foto: req.file.path 
             });
 
             // Guardar el producto en la base de datos

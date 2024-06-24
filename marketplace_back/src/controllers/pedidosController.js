@@ -8,12 +8,12 @@ const CLIP_API_KEY = process.env.CLIP_API_KEY;
 const agregarPedido = async (req, res) => {
     try {
         const nuevoPedido = new Pedidos({
-            fecha_hora: new Date().toISOString(), // Obtener la fecha y hora actual
+            fecha_hora: new Date().toISOString(), 
             pedido: req.body.pedido,
             estatus_pedido: req.body.estatus_pedido,
             total_pedido: req.body.total_pedido,
             pago: req.body.pago,
-            fg_usuario: req.body.fg_usuario // Aquí asumimos que fg_usuario es el ID del usuario relacionado
+            fg_usuario: req.body.fg_usuario 
         });
 
         const pedidoGuardado = await nuevoPedido.save();
@@ -71,7 +71,6 @@ const agregarPedidoTarjeta = async (req, res) => {
             headers: {
                 'Content-Type': 'application/json',
                 'x-api-key': `${CLIP_API_KEY}`
-                // Otros encabezados si son necesarios
             },
             body: JSON.stringify(req.body)
         });
@@ -104,7 +103,7 @@ const WebHook = async (req, res) => {
                 estatus_pedido: 'RECIBIDO',
                 total_pedido: item.amount,
                 pago: item.issuer,
-                fg_usuario: userId // Asumimos que userId es el ID del usuario relacionado
+                fg_usuario: userId 
             });
 
             const pedidoGuardado = await nuevoPedido.save();

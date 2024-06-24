@@ -90,7 +90,6 @@ const loginUsuario = async (req, res) => {
             id: user._id,
             correo: user.correo,
             rol: user.rol
-            // Puedes incluir más datos aquí según sea necesario
         }, JWT_SECRET, { expiresIn: '1h' });
 
         // Enviar respuesta con token y datos del usuario
@@ -101,7 +100,6 @@ const loginUsuario = async (req, res) => {
             apellidos: user.apellidos,
             correo: user.correo,
             rol: user.rol
-                // Incluye otros campos del usuario según necesites
         });
     } catch (err) {
         res.status(401).json({ message: err.message });
