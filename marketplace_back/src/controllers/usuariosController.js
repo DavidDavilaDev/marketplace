@@ -96,14 +96,12 @@ const loginUsuario = async (req, res) => {
         // Enviar respuesta con token y datos del usuario
         res.status(200).json({
             token,
-            usuario: {
-                _id: user._id,
-                nombre: user.nombre,
-                apellidos: user.apellidos,
-                correo: user.correo,
-                rol: user.rol
+            _id: user._id,
+            nombre: user.nombre,
+            apellidos: user.apellidos,
+            correo: user.correo,
+            rol: user.rol
                 // Incluye otros campos del usuario según necesites
-            }
         });
     } catch (err) {
         res.status(401).json({ message: err.message });
