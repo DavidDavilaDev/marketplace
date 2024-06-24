@@ -1,5 +1,5 @@
 const app = require("./app");
-const port = 4000;
+const port = process.env.PORT;
 const mongoose = require("mongoose");
 require('dotenv').config()
 //asignacion del puerto y requerir el archivo app para iniciar el servidor

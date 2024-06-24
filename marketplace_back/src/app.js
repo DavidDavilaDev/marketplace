@@ -10,13 +10,15 @@ app.use(cors());
 app.use(morgan("dev"));
 
 
-const usuariosRoutes = require('./routes/usuarios.routes')
+const usuariosRoutes = require('./routes/usuarios.routes');
+const productosRoutes = require('./routes/productos.routes');
 
 app.get("/", (req, res) => {
   res.send("Todavia Funciona :)");
 });
 
 app.use('/api', usuariosRoutes);
+app.use('/api', productosRoutes);
 
 //el "/api/..." es para saber como esta formada la URL
 
