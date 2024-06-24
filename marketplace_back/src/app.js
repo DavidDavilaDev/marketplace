@@ -10,7 +10,7 @@ app.use(cors());
 app.use(morgan("dev"));
 
 app.get("/", (req, res) => {
-  res.send("Si");
+  res.send("Todavia Funciona :)");
 });
 
 //el "/api/..." es para saber como esta formada la URL
