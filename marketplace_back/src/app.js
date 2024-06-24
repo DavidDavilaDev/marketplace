@@ -9,9 +9,14 @@ app.use(express.json());
 app.use(cors());
 app.use(morgan("dev"));
 
+
+const usuariosRoutes = require('./routes/usuarios.routes')
+
 app.get("/", (req, res) => {
   res.send("Todavia Funciona :)");
 });
+
+app.use('/api', usuariosRoutes);
 
 //el "/api/..." es para saber como esta formada la URL
 
