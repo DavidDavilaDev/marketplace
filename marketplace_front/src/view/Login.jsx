@@ -265,6 +265,13 @@ function Login() {
       correo: respuesta_exitosa.profileObj.email,
       contrasena: respuesta_exitosa.profileObj.googleId,
     });
+    const userGoogleData = {
+      nombre: respuesta_exitosa.profileObj.givenName,
+      apellidos: respuesta_exitosa.profileObj.familyName,
+      correo: respuesta_exitosa.profileObj.email,
+      foto: respuesta_exitosa.profileObj.imageUrl,
+    };
+    localStorage.setItem('userGoogleData', JSON.stringify(userGoogleData));
 
   };
 

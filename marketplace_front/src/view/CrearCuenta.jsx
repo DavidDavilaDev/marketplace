@@ -78,7 +78,7 @@ function CrearCuenta () {
           showConfirmButton: false,
           timer: 2000
         }).then(function(){
-          window.location.href='/';
+          window.location.href='/Home';
       });
         
       } else {
@@ -89,7 +89,7 @@ function CrearCuenta () {
           showConfirmButton: false,
           timer: 2500
         }).then(function(){
-          window.location.href='/Registro';
+          window.location.href='/';
       });
       }
       
