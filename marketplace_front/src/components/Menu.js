@@ -222,7 +222,7 @@ function Menu() {
                     <div key={index} class="contenido-card_propia">
                       <h3>{productos.nombre_producto}</h3>
                       <h5>{productos.precio_producto}</h5>
-                      <img src={`https://backpacha.vercel.app/img/${productos.ruta_foto}`}></img>
+                      <img src={`https://marketplace-rose-three.vercel.app/img/${productos.ruta_foto}`}></img>
                       {productos.tiempo_espera === 0 ? (
                         <h5>Tiempo de espera aprox: de inmediato</h5>
                       ) : (

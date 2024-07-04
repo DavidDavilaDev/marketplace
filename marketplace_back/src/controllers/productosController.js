@@ -24,6 +24,9 @@ const agregarProducto = async (req, res) => {
                 return res.status(500).json({ message: 'Error al subir archivo' });
             }
 
+            // Obtener solo el nombre del archivo
+            const fileName = req.file.filename;
+
             // Crear un nuevo producto con los datos recibidos
             const nuevoProducto = new Productos({
                 nombre_producto: req.body.nombre_producto,
@@ -31,7 +34,7 @@ const agregarProducto = async (req, res) => {
                 resena_producto: req.body.resena_producto,
                 tiempo_espera: req.body.tiempo_espera,
                 tipo_producto: req.body.tipo_producto,
-                ruta_foto: req.file.path 
+                ruta_foto: fileName // Guardar solo el nombre del archivo
             });
 
             // Guardar el producto en la base de datos
