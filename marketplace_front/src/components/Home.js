@@ -97,7 +97,6 @@ function Home() {
             <table className='table table-responsive table-hover'>
               <thead>
                 <tr>
-                  <th scope="col">No.</th>
                   <th scope="col">Pedido</th>
                   <th scope="col">Total Pedido</th>
                   <th scope="col">Tipo de Pago</th>
@@ -121,7 +120,6 @@ function Home() {
               ) :
                 (productosFiltrados.map((datosPedidos, index) => (
                   <tr key={index}>
-                    <td>{datosPedidos.id_pedido}</td>
                     {JSON.parse(datosPedidos.pedido).map((pedido, index) => (
                       <tr key={index}>
                         <td>{pedido.nombre_producto}</td>

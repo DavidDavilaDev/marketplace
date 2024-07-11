@@ -20,6 +20,8 @@ function Header(){
 
   const [userGoogle, setUserGoogle] = useState(null);
 
+  const defaultImage = 'dist/img/chayanne.jpg';
+
 useEffect(() => {
 // Recuperar datos de localStorage
 const storedUser = localStorage.getItem('user');
@@ -73,7 +75,11 @@ useEffect(() => {
           <div className="nav-link" data-toggle="dropdown" >
           <div className="user-panel"  style={{ position: 'relative', top: '-5px', cursor: 'pointer' }}>
            <div>
-          <img src={userGoogle?.foto} className="img-circle elevation-2"  />
+           <img
+      src={userGoogle?.foto || defaultImage}
+      className="img-circle elevation-2"
+      alt="User Profile"
+    />
           </div>
           </div>
             <span className="badge badge-warning navbar-badge"></span>
@@ -82,13 +88,15 @@ useEffect(() => {
             
             <div className="dropdown-divider" />
             <div className="dropdown-item">
-              <i className="fas fa-lightbulb mr-2" /> Puntos: 
-              <span className="float-right text-sm">{user?.puntos}</span>
+              <button className="nav-link btn btn-block btn-default text-dark">
+              Ver perfil
+              </button>
+              
             </div>
             <div className="dropdown-divider" />
             <li className="nav-item">
-            <button className="nav-link btn btn-block btn-danger " type="button" data-toggle="modal" data-target="#modal-default">
-            <i class="nav-icon fas fa-user"></i>
+            <button className="nav-link btn btn-block btn-danger text-white" type="button" data-toggle="modal" data-target="#modal-default">
+            <i class="nav-icon fas fa-user"></i>{' '}
             Cerrar Sesión
 </button>
           </li>

@@ -6,6 +6,9 @@ function SideNav (){
   const [user, setUser] = useState(null);
   const [userGoogle, setUserGoogle] = useState(null);
 
+  const defaultImage = 'dist/img/chayanne.jpg';
+
+
 useEffect(() => {
 // Recuperar datos de localStorage
 const storedUser = localStorage.getItem('user');
@@ -74,7 +77,7 @@ useEffect(() => {
         {/* Sidebar user panel (optional) */}
         <div className="user-panel mt-3 pb-3 mb-3 d-flex">
           <div>
-          <img src={userGoogle?.foto} className="img-circle elevation-2" />
+          <img src={userGoogle?.foto|| defaultImage} className="img-circle elevation-2" />
           </div>
           <div className="info">
             <a className="d-block">{user?.nombre} {user?.apellidos}</a>
@@ -86,19 +89,20 @@ useEffect(() => {
           <ul className="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
             {/* Add icons to the links using the .nav-icon class
          with font-awesome or any other icon font library */}
-            <li className="nav-item">
-  <NavLink to="/home" className="nav-link">
-    <i className="nav-icon fas fa-tachometer-alt" />
+           
+<li className="nav-item">
+  <NavLink to="/Menu" className="nav-link">
+    <i className="nav-icon fas fa-store" />
     <p>
-      Dashboard
+      Catalogo
     </p>
   </NavLink>
 </li>
 <li className="nav-item">
-  <NavLink to="/Menu" className="nav-link">
-    <i className="nav-icon fas fa-edit" />
+  <NavLink to="/home" className="nav-link">
+    <i className="nav-icon fas fa-tachometer-alt" />
     <p>
-      Menu
+      Pedidos
     </p>
   </NavLink>
 </li>

@@ -101,13 +101,13 @@ const pedidoData = {
         override_settings: {
           payment_method: ["CARD"],
         },
-      webhook_url: "https://backpacha.vercel.app/api/pedidos/WebHook"
+      webhook_url: "https://marketplace-rose-three.vercel.app/api/pedidos/WebHook"
          
         // Asegúrate de ajustar esta estructura según la información requerida por Clip
         // Otros detalles necesarios para el pago, según lo requerido por el SDK de Clip
       };
   
-      const response = await fetch('https://backpacha.vercel.app/api/pedidos/agregarPedidoTarjeta', {
+      const response = await fetch('https://marketplace-rose-three.vercel.app/api/pedidos/agregarPedidoTarjeta', {
         method: 'POST',
         headers: {
           'x-access-token': `${token}`,
@@ -182,7 +182,7 @@ const pedidoData = {
       // Aquí debes obtener el tipo de pago (efectivo o tarjeta) del usuario
     };
         try {
-            const response = await axios.post('https://backpacha.vercel.app/api/pedidos/pruea', paymentDetails, pedidoData);
+            const response = await axios.post('https://marketplace-rose-three.vercel.app/api/pedidos/pruea', paymentDetails, pedidoData);
             console.log(response.data.message);
             // Manejar la respuesta del pago (puede actualizar el estado, mostrar un mensaje, etc.)
         } catch (error) {
@@ -235,7 +235,7 @@ const pedidoData = {
     }
 
     try {
-      const response = await fetch('http://localhost:4000/api/pedidos/agregarPedido', {
+      const response = await fetch('https://marketplace-rose-three.vercel.app/api/pedidos/agregarPedido', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

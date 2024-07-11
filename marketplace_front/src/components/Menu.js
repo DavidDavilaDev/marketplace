@@ -252,11 +252,10 @@ function Menu() {
 
 
               {/* agregar mas card*/}
-
-              <h1 style={{ padding: '50px', color: 'transparent' }} >a</h1>
             </div>
             { /*   Cotaier  */}
           </div>
+          <h1 style={{marginTop:'5%', color:'transparent'  }} >a</h1>
 
 
 

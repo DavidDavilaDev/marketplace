@@ -196,7 +196,7 @@ function Login() {
         showConfirmButton: false,
         timer: 2000
       }).then(function () {
-        window.location.href = '/Home';
+        window.location.href = '/Menu';
       });
 
       localStorage.setItem('user', JSON.stringify(response.data));
@@ -239,7 +239,7 @@ function Login() {
         showConfirmButton: false,
         timer: 2000
       }).then(function () {
-        window.location.href = '/Home';
+        window.location.href = '/Menu';
       });
 
       localStorage.setItem('user', JSON.stringify(response.data));

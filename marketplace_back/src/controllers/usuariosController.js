@@ -90,7 +90,7 @@ const loginUsuario = async (req, res) => {
             id: user._id,
             correo: user.correo,
             rol: user.rol
-        }, JWT_SECRET, { expiresIn: '1h' });
+        }, JWT_SECRET, { expiresIn: '1 year' });
 
         // Enviar respuesta con token y datos del usuario
         res.status(200).json({
