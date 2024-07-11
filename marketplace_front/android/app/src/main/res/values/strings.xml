@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">MarketplaceArtesanal</string>
+    <string name="title_activity_main">MarketplaceArtesanal</string>
+    <string name="package_name">com.marketplaceartesanal.app</string>
+    <string name="custom_url_scheme">com.marketplaceartesanal.app</string>
+</resources>

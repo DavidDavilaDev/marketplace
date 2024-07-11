@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@capacitor/android": "^5.7.0",
-    "@capacitor/ios": "^5.7.0",
+    "@capacitor/android": "^5.7.6",
+    "@capacitor/core": "^6.1.0",
+    "@capacitor/ios": "^5.7.6",
     "@ionic/react": "^7.7.2",
     "@ionic/react-router": "^7.7.2",
     "@testing-library/jest-dom": "^5.17.0",
@@ -47,5 +48,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^6.1.0"
   }
 }
